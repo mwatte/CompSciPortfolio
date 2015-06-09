@@ -1,0 +1,110 @@
+/*
+    Document   : w5 css
+    Created on : 2015-03-09 05:40 PM
+    Author     : NinjaKitten
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+
+/*solution found at (http://developer.nokia.com/community/wiki/How_to_disable_dragging_of_images_and_text_selection_in_web_pages)*/
+html, body, div, span, object,
+form, input, h1, h2, button, label, a, img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  /* this will work for QtWebKit in future */
+  -webkit-user-drag: none;
+}
+
+
+root {
+    display: block;
+}
+body {
+    background-color: black;
+    color: white;
+}
+p {
+    margin-bottom: 4em;
+}
+.string {
+    position: absolute;
+    height: 0.25em;
+    width: 80em;
+    margin: 1.5em;
+    margin-left: 2em;
+}
+#stringE2 {
+    background-color: red;
+    top: 16.5em;
+}
+#stringA {
+    background-color: darkorange;
+    top: 14.75em;
+}
+#stringD {
+    background-color: yellow;
+    top: 13em;
+}
+#stringG {
+    background-color: lime;
+    top: 11.25em;
+}
+#stringB {
+    background-color: blue;
+    top: 9.75em;
+}
+#stringE1 {
+    background-color: purple;
+    top: 8em
+}
+.slider {
+    height: 1.5em;
+    width: 0.75em;
+    background-color: white;
+    margin: 0.5em;
+    position: absolute;
+}
+#sliderE1 {
+    top: 8.25em;
+    left: 0.5em;
+}
+#sliderB {
+    top: 10em;
+}
+#sliderG {
+    top: 11.8em;
+}
+#sliderD {
+    top: 13.5em;
+}
+#sliderA {
+    top: 15.25em;
+}
+#sliderE2 {
+    top: 17em;
+}
+.fret {
+    background-color: grey;
+    height: 12em;
+    width: 0.25em;
+    margin-left: 0.5em;
+    position: absolute;
+    top: 8em;
+}
+#fret1 {
+    left: 1.5em;
+}
+#fret2 {
+    left: 17.5em;
+}
+#fret3 {
+    left: 33.5em;
+}
+#fret4 {
+    left: 49.5em;
+}
+#fret5 {
+    left: 65.5em;
+}

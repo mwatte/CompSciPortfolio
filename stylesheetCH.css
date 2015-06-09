@@ -1,0 +1,85 @@
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; /* Set margin and padding for cross browser consistency. */
+	list-style-type: none; /* Needed to eliminate list item marker */ 
+	text-align: center; /* Centers navigation bar */ 
+	background-color: #353535; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; /* Needed to create horizontal effect */ 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; /* Gives the link space inside it's individual block. */ 
+	color: #3571A3; 
+	background-color: #353535; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: crimson; 
+	background-color: #242424; /* Both of these values create the "Rollover effect*/
+	} 
+#mainbody {
+  text-align: center;
+}
+
+.container {
+  display: table;
+  margin: auto;
+}
+
+.container > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.red {
+  color: crimson;
+  text-align: left;
+}
+
+.purple {
+  color: darkorchid;
+  text-align: left;
+}
+
+.blue {
+  color: #3571A3;
+  text-align: left;
+}
+
+.green {
+  color: #10AB10;
+  text-align: left;
+}
+
+p {
+  text-align: center;
+  margin-left: 1em;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 130%;
+  background-color: #FFFAED;
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #3571A3;
+}
+
+h1 > p {
+  color: #353535;
+}
+
+img {
+  height: 15em;
+  width: 15em;
+}
+/*color list: 
+regular text: 353535
+headings: 357143
+misc.: darkorchid, crimson, 3571a3, 10ab10*/

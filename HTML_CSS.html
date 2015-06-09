@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	   <title> HTML/CSS </title>
+	   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    </head>
+	
+    <body>
+	    <div id="navbar"> 
+            <ul> 
+	           <li><a href="index.html">Home</a></li> 
+               <li><a href="HTML_CSS.html">HTML/CSS</a></li> 
+	           <li><a href="ComputerHardware.html">Computer Hardware</a></li> 
+	           <li><a href="AboutMeRecolor.html">About Me</a></li> 
+               <li><a href="Projects.html"> Projects</a></li>
+                <li><a href="Vindinium.html">Vindinium</a></li>
+            </ul> 
+        </div>
+	    <div id="mainbody">
+           <h1>HTML/CSS</h1>
+           <h4>Woah! Sudden color change! That's because we'll be talking about coding!</h4>
+           <p>So, what is code? Code is what allows us to do all the amazing things we do on electronics. You see this webpage? Well, it was put together from nothing with code. You take a look at YouTube, that entire thing was made by code. To make changes to it, people have to go back into the code and make those changes themselves. But how does it all work? I'm here to tell you just that.</p>
+           <h4>What is HTML?</h4>
+           <p>HTML is a specific type of coding language. It also happens to be the language that is used to build this particular website. HTML is an acronym, and it stands for "Hypertext Markup Language." It is mainly used in creating simple websites such as this one. Hypertext uses hyperlinks to jump from place to place, and just the HTML describes what will be included on the website. To make the website look nice, and to position things, you need to use CSS, which I'll talk about later. Here is an example of HTML coding:</p>
+         <div class="example"><span>(h4)</span>What is HTML?<span>(/h4)</span></div>
+         <p>The h4 things and the parenthesis are tags. Once again, I will talk about tags later. The only difference between this and real code is that instead of the parenthesis in this example, there are these things, ^, but facing to either side. I was unable to use the proper coding format because if I did, then you would be unable to see what I was showing you! HTML was developed at CERN by a guy called Tim Berners-Lee, using Standard Generalized Markup Language, or SGML. HTML is actually pretty important, though. If I didn't have HTML, then I wouldn't have been able to create this website in this way. HTML is the skeleton of a webpage, and just like a skeleton, it is essential for the structure of the webpage.</p>
+         <h4>What is CSS?</h4>
+         <p>CSS is the language used to make HTML look nice. CSS is often present in a separate document which the HTML document is linked to, so it knows what to do. If you don't need to do much styling, you could also just write the styling directly in the tag. Here is an example of CSS, as it would be seen in the stylesheet:</p>
+         <div class="example" style="margin-left:-6em"><span>h4</span> {</div><div class="example">color: <span1>blue;</span1></div><div class="example" style="margin-left:-8em">}</div>
+         <p>The green bit specifies what tag's text will be styled. The curly brackets say where the styling begins and ends. The bit between the curly brackets defines what part of the content is being styled, and how that specific thing will be changed. In this case, the color of the heading 4 is being changed to blue. You can also style what you want to have styled directly in the HTML document, either in the "head," whose information does not show up in the website itself, or after the tag itself. Let me show you an example:</p>
+         <div class="example"><span>(p</span> <span1>style</span1>=<span2>"color:violet; font-family:Verdana;"</span2><span>)</span>Hello everyone!<span>(/p)</span></div>
+         <p>This would change the color of the text "Hello everyone!" into violet, and make the font Verdana. Because the CSS is only in the tag which preceeds "Hello everyone!", it would only change that specific text. Everything else would be left alone. CSS came from the need to make things look nicer, as HTML didn't do a very good job at that. If HTML is the skeleton, then CSS is the everything else. It determines what is seen, like skin, and it specifies how things move, like muscles. If there wasn't any CSS, then This webpage would be very boring and plain. </p>
+           <h4>Tags</h4>
+         <p>So. The term "tag" has been turning up a lot, but what <em>are</em> they? Well, tags are what tell the computer what the formatting will be for the text. There are multiple different kinds of tags. There are heading tags, of which there are six kinds, with h6 being tiny and h1 being the largest. The phrase "Tags" on top of this paragraph was created using a <span3>(h4)</span3> tag. There are also <span3>(p)</span3> tags, which define paragraphs, and tags for lists. The list tags include ordered lists, unordered lists, and list items. Let me show you the code I would write for an ordered list, but before that, I should probably tell you that you should look to the very left side of your screen when looking at the list. But here it is:</p>
+         <div class="example" style="margin-left:4em"><span>(ol</span> <span1>style</span1>=<span2>"color:#AF2B45"</span2><span>)</span></div>
+         <div class="example"><span>(li)</span>One<span>(/li)</span></div>
+         <div class="example"><span>(li)</span>Two<span>(/li)</span></div>
+         <div class="example" style="margin-left:0.9em"><span>(li)</span>Three<span>(/li)</span></div>
+         <div class="example" style="margin-left:-7em"><span>(/ol)</span></div>
+         <p>This is what it makes:</p>    
+         <ol style="color:#AF2B45">
+           <li>One</li>
+           <li>Two</li>
+           <li>Three</li>
+         </ol>
+         <p>As you can see, there are tags within the <span3>(ol)</span3> tags. That is because the <span3>(ol)</span3> tags specify that a list will be started. The <span3>(li)</span3> tags specify what will be in the list. An ordered list has numbers down the side, ordering the list items. An unordered list would be exactly the same, except that the tag would be <span3>(ul)</span3>, and instead of a numbered list, you would get dots. Let me show you.</p> 
+         <ul style="color:#AF2B45">
+           <li>Hello</li>
+           <li>to</li>
+           <li>you</li>
+         </ul>
+         <p>There are a very large number of things you could do with tags, and if you add CSS on top of it, then you would get a huge array of possibilities for whatever you are coding. But how do tags work? Well, the first tag is the opening tag, and tells the computer that that specific thing is starting. The second one is a closing tag, so it has a backslash in front of the name of the tag. The closing tag tells the computer  that the item is finished, and that it can go on to the next part of the coding. </p>
+           <h4>Attributes</h4>
+           <p>So I've been talking to you about some different stuff in coding, but now it is time to talk about attributes. Attributes tell you more about the tag it is used on. For instance, in my past examples I've been using the <span3>style</span3> attribute to change the color of the text. If I didn't then the text would automatically be black. You change attributes by specifying what attribute you want changed (<span3>style</span3>) and specify what will be changed about it. Attributes can be used for more than just styling, though. Attributes play a part in creating links. A link to an image would look something like this:</p>
+         <div class="example"><span>(img</span> <span1>src</span1>=<span2>"www.imageurl.com"</span2><span>)</span></div>
+         <p>It has the <span3>src</span3>, or source, attribute. The source attribute tells the computer where it will find the image, or what the source of the image is. a link to another website would be different, though. One of those would look like this:</p>
+         <div class="example"><span>(a</span> <span1>href</span1>=<span2>"www.linkadress.com"</span2><span>)</span>Link<span>(/a)</span></div>
+         <p>The link for an image is self-closing, while the link to another webpage is not. Because the image link is self-closing, it does not need a follow-up closing tag. The webpage link, however, is not self-closing, and it requires a separate closing tag. The text that goes between the opening and closing tags for the link, or the text "Link" in this case, show what the text for the link is. I suppose by now you might have noticed the <span3>href</span3> attribute. This attribute works like the <span3>src</span3> attribute for images in that it allows the computer to find the webpage, but there is a difference. The <span3>src</span3> attribute brings a picture into the webpage, while the <span3>href</span3> attributes provides an exit to another website.</p>
+         <p style="color:#8071B4">Well, that's the end of this section. I hope you learned something from this, and that I didn't bore you to death with all my blabbering. I'm actually surprised you read this thing all the way to the end. But whatever. I'm just talking to myself now, aren't I? Bye, I guess. Or not. It's up to you, after all.</p>
+        </div>
+        <p>Created: Monday October 20, 2014</p>
+        <p>Last Updated: Tuesday June 9, 2015, 1:52 pm</p>
+    </body>
+</html>	

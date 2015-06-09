@@ -1,0 +1,30 @@
+body {
+    background-color: Black;
+    color: yellow;
+    font-family: Courier;
+    font-weight: bold;
+}
+
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; /* Set margin and padding for cross browser consistency. */
+	list-style-type: none; /* Needed to eliminate list item marker */ 
+	text-align: center; /* Centers navigation bar */ 
+	background-color: black;
+	} 
+ 
+#navbar ul li {  
+	display: inline; /* Needed to create horizontal effect */ 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; /* Gives the link space inside it's individual block. */ 
+	color: white; 
+	background-color: #101010; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: crimson; 
+	background-color: #202020; /* Both of these values create the "Rollover effect*/
+	}  

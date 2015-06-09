@@ -1,0 +1,45 @@
+<!Doctype html>
+<head>
+  <style>
+body {
+    background-color: navy;
+    text-align: center;
+    color: white;
+}
+h3 {
+    text-decoration: underline;
+}
+#Answer {
+    color: yellow;
+    font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <a href="http://f.smtcs.rocks/majaw/Projects.html"><--Back to Projects></a>
+    <h2>Drop Down Calculator</h2>
+<input type="text" name="Number1" style="width:50px;" id="Number1">
+<select id="DropdownMenu1">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="x">×</option>
+    <option value="÷">÷</option>
+    <option value="^">^</option>
+    <option value="%">%</option>
+</select>
+<input type="text" name="Number2" style="width:50px;" id="Number2">
+<input type="button" value="Calculate" id="submitButton" />
+<p>The answer is: <span id="Answer"></span>
+</p>
+<h3>How to use:</h3>
+<p>Select an operation.</p>
+<p>Enter a value in either box.</p>
+<p>The operations are as follows:</p>
+<p> + : plus</p>
+<p> - : minus</p>
+<p> x : times</p>
+<p> / : divided by</p>
+<p> ^ : to the power of</p>
+<p> % : percent of</p>
+<script src="calc.js"></script>
+</body>  

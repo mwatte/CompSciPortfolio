@@ -1,0 +1,140 @@
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; /* Set margin and padding for cross browser consistency. */
+	list-style-type: none; /* Needed to eliminate list item marker */ 
+	text-align: center; /* Centers navigation bar */ 
+	background-color: #353535; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; /* Needed to create horizontal effect */ 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; /* Gives the link space inside it's individual block. */ 
+	color: #3571A3; 
+	background-color: #353535; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: crimson; 
+	background-color: #242424; /* Both of these values create the "Rollover effect*/
+	} 
+
+/*.toplist {	* This is the top-level background of the items *
+	background-color: #ffdddd;*/
+}
+div.toplist div {	/* This style applies to the divs inside the top */
+	padding-left: 15px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.firstlevel {	/* These list items indent a little bit */
+	margin-left: 1em;
+    text-decoration: underline;
+}
+.secondlevel {	/* These list items indent more */
+	margin-left: 2em;
+    color: #353535;
+}
+.thirdlevel {
+  margin-left: 4em;
+  color: #353535;
+}
+
+
+.intro {
+  color: #353535; text-align: center
+}
+
+.red {
+  color: crimson;
+  text-align: left;
+}
+
+.purple {
+  color: darkorchid;
+  text-align: left;
+}
+
+.blue {
+  color: #3571A3;
+  text-align: left;
+}
+
+.green {
+  color: #10AB10;
+  text-align: left;
+}
+
+.container {
+  display: table;
+  margin: auto;
+}
+
+.container > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+img {
+  height: 12em;
+   width: 12em;
+}
+
+td > img {
+  height: 10em;
+   width: 10em;
+}
+
+ul, ol {
+  text-align: left
+}
+
+p {
+  text-align: center;
+}
+
+body > ul > li {
+  margin-top: 1em;
+}
+body {
+  font-family: sans-serif;
+  line-height: 130%;
+  
+  background-color: #FFFAED;
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #3571A3;
+}
+ul > li {
+  color: #353535;
+}
+h3 > p {
+  color: #353535;
+}
+
+body > ul > div > li > ul > li {
+  color: purple;
+}
+
+ul {
+  list-style-type: none;
+}
+
+table {
+  margin: auto;
+  position: inline;
+}
+
+img {
+  position: inline;
+}
+
+
+/*color list: 
+regular text: 353535
+headings: 357143
+misc.: darkorchid, crimson, 3571a3, 10ab10*/
