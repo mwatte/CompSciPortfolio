@@ -1,0 +1,179 @@
+var Bot = require('bot');
+var PF = require('pathfinding');
+//var bot = new Bot('to11y3lc', 'training', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.
+var bot = new Bot('j2mldqc7', 'arena', 'http://52.8.116.125:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        //////* Write your bot below Here *//////
+        //////* Set `myDir` in the direction you want to go and then bot.goDir is set to myDir at the bottom *////////
+        
+        /*                                      * 
+         * This Code is global data!            *
+         *                                      */
+        
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
+        var myDir;
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+        
+        var totalMines = bot.freeMines.length + bot.bot1.mineCount + bot.bot2.mineCount + bot.bot3.mineCount + bot.bot4.mineCount;
+        
+        //This if statement creates a good way to make persistant variables
+        if (bot.data.game.turn < 5) {
+            //this persistant variable is used to make my bot drink twice
+            bot.doubleDrink = false;
+        }
+        
+        //This creates a variable for all enemy bots
+        var enemyBots = [];
+        if(bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if(bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if(bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if(bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+        
+        //This creates a variable for everything that isn't one of my mines
+        var notMyMines = [];
+        notMyMines = notMyMines.concat(bot.freeMines);
+        if(bot.yourBot.id != 1 && bot.bot1mines) notMyMines = notMyMines.concat(bot.bot1mines);
+        if(bot.yourBot.id != 2 && bot.bot2mines) notMyMines = notMyMines.concat(bot.bot2mines);
+        if(bot.yourBot.id != 3 && bot.bot3mines) notMyMines = notMyMines.concat(bot.bot3mines);
+        if(bot.yourBot.id != 4 && bot.bot4mines) notMyMines = notMyMines.concat(bot.bot4mines);
+        
+        //This creates a variable for my mines
+        var myMines = [];
+        myMines = myMines.concat(bot.claimedMines);
+        if(bot.yourBot.id = 1) myMines = myMines.concat(bot.bot1mines);
+        if(bot.yourBot.id = 2) myMines = myMines.concat(bot.bot2mines);
+        if(bot.yourBot.id = 3) myMines = myMines.concat(bot.bot3mines);
+        if(bot.yourBot.id = 4) myMines = myMines.concat(bot.bot4mines);
+        
+        //This creats a variable that determines the location of the closest bot
+        var closestBot = [enemyBots[0].pos.x, enemyBots[0].pos.y];
+            for(i = 0; i < enemyBots.length; i++) {
+                if(bot.findDistance(myPos, closestBot) > bot.findDistance(myPos, [enemyBots[i].pos.x, enemyBots[i].pos.y])) {
+                    closestBot = [enemyBots[i].pos.x, enemyBots[i].pos.y];
+                }
+            }
+        
+        
+        
+        /*                                      * 
+         * This Code Decides WHAT to do         *
+         *                                      */
+        var task;
+        
+        //This code makes my bot find a tavern when it has low health
+        if(bot.yourBot.life < 30 && bot.yourBot.gold > 1 || bot.yourBot.life < 50 && (bot.yourBot.mineCount / totalMines * 100) > 50){
+            bot.doubleDrink = true;
+            task = "nearest tavern";
+        }
+        //This makes my bot drink again
+        else if(bot.doubleDrink){
+            bot.doubleDrink = false;
+            task = "nearest tavern";
+        }
+        //This code should tell my bot to initiate closest enemy when an enemy bot comes close
+        else if ([bot.findDistance(myPos, closestBot)] < 5 && bot.data.game.board.size > 10) {
+            task = "closest enemy";
+        }
+        //This code is supposed to determine if the enemy bots have more than 90% of the mines and set the task to strong enemy
+        else if((enemyBots.mineCount / totalMines * 100) > 90 ) {
+           task = "strong enemy";
+        } 
+        //This code determines if an enemy bot has less than 50 health, and if my bot has more than 50 health
+        else if (enemyBots.life < 50 && bot.yourBot.life > 50) {
+            task = "weak enemy";
+        }
+        else {
+            task = "take mine";
+        }
+        
+        /*                                      * 
+         * This Code Determines HOW to do it    *
+         *                                      */
+        
+        
+        //This Code finds the nearest tavern and sets myDir toward that direction
+        if(task === "nearest tavern") {
+            var closestTavern = bot.taverns[0];
+            for(i = 0; i < bot.taverns.length; i++) {
+                if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTavern = bot.taverns[i];
+                }
+            }
+            console.log("Getting some drinks.");
+            myDir = bot.findPath(myPos, closestTavern);
+        }
+        
+        //This Code finds the enemy with the most mines and sets myDir towards that direction
+        if(task === "strong enemy") {
+            //Alex's function is to find and locate the bot with the most mines
+        var mostMineBot;
+        function mostMines() {
+            var allBots = [];
+            for(i = 1; i < 5; i++) {
+                if (i !== 4 && bot['bot' + i].mineCount > bot['bot' + (i + 1)].mineCount) {
+                    allBots.push(i);
+                }
+            }
+            if(allBots.length === 0) {
+                return false;
+            }
+            mostMineBot = [bot['bot' + allBots[allBots.length - 1]].pos.x, bot['bot' + allBots[allBots.length - 1]].pos.y];
+        }
+            console.log("Fighting strongest dude!");
+            myDir = bot.findPath(myPos, mostMineBot);
+        }
+        
+        //This Code finds the nearest enemy and sets myDir towards that direction
+        if(task === "closest enemy") {
+            console.log("Fighting closest dude!");
+            myDir = bot.findPath(myPos, closestBot);
+        }
+        
+        //This code finds the enemy with the least health and sets myDir toward that direction
+        if(task === "weak enemy") {
+            var targetIndex = 0;
+            for(i = 0; i < enemyBots.length; i++) {
+                if(enemyBots[targetIndex].life > enemyBots[i].life) {
+                    targetIndex = i;
+                }
+            }
+            console.log("Killing weakest dude!");
+            myDir = bot.findPath(myPos, [enemyBots[targetIndex].pos.x, enemyBots[targetIndex].pos.y]);
+        }
+        
+        //This Code finds the nearest mine and sets myDir toward that direction
+        if(task === "take mine") {
+            var closestMine = notMyMines[0];
+            for(i = 0; i < notMyMines.length; i++) {
+                if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, notMyMines[i])) {
+                    closestMine = notMyMines[i];
+                }
+            }
+            console.log("Taking a mine!");
+            myDir = bot.findPath(myPos, closestMine);
+        }
+        
+                       
+        /*                                                                                                                              * 
+         * This Code Sets your direction based on myDir.  If you are trying to go to a place that you can't reach, you move randomly.   *
+         * Otherwise you move in the direction set by your code.  Feel free to change this code if you want.                            */
+        if(myDir === "none") {
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            bot.goDir = dirs[rand];
+        } else {
+            bot.goDir = myDir;
+        }
+        
+        
+        
+        ///////////* DON'T REMOVE ANTYTHING BELOW THIS LINE *//////////////
+        resolve();
+    });
+};
+bot.runGame();

@@ -2,7 +2,7 @@
 <html>
     <head>
 	    <title> Maja's website </title>
-	    <link rel="stylesheet" type="text/css" href="stylesheetblue.css">
+	    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head> 
     <body> 
         <div id="navbar"> 
@@ -19,18 +19,19 @@
         <div id="mainbody">
             <h1>Vindinium AI Project</h1>
             <p>On this page I will be going over a variety of topics in order to give a deeper understanding of what the Vindinium project was about and what I did for it. First, I will write a short explanation on Artificial Intelligence, or AI. Then I will explain what Vindinium is and what I made for it.</p>
+            <h2>What is an AI?</h2>
             <div class="purple">
-                <h2>What is an AI?</h2>
-                <p>An AI, otherwise known as an artificial intelligence, is </p>
+                <p>An AI, otherwise known as an artificial intelligence, is essentially the "intelligence" exhibited by computers. By studying how to create complex AI, many controversial topics come up such as "what makes us human," and "what is intelligence." Some examples of AI in today's world include Google's self driving car and Cleverbot. There are many different kinds of complex AI, but as this class is meant to cover the basics and get people started with code, our AI are much simpler than those. Our AI are meant for the game Vindinium, which I will explain below.</p>
             </div>
+            <h2>What is Vindinium?</h2>
             <div class="green">
-                <h2>What is Vindinium?</h2>
-                <p></p>
+                <p>Vindinium is an AI designing challenge. For the game, you use whichever programming language you like to create an AI with the goal of getting the most gold, and thereby winning the game. The parts of the game are the player's bots, trees and other impassable objects, taverns, the map itself, and mines. These are some mechanics of the game which take part in the challenge. First off, the size of the map changes. You might have code that's good for bigger maps, but terrible for small maps, or vice versa. You need code that will work for both large and small settings. Next are mines. To get gold, you need to make your bot claim mines. Every turn, each mine your bot owns gives it one gold. All of the mines begin as free mines, and they change color depending on who owns them. To take ownership of a mine, your bot must walk into it and fight the goblin which has control. This links very well to the next topic: player health. Each bot starts with 100 health, and can never go above that limit. When their HP hits 0, they respawn from their spawnpoint and lose all of their mines. Some ways that a player can lose HP are by attacking mines, which take off 20 HP each, waiting around and doing nothing (as each turn takes 1 HP, though you can't die from this,) or being attacked by another player's bot. If a mine killed the bot, all of the mines become free mines. If a player killed the bot, then the victor gains control over all of the loser's mines. Another bot will attack a bot when it walks into it or when they end their turn next to them. Here is where taverns come into play. Taverns are essentially the potions shop of the game. For 2 gold, you can get a beer- I mean, a "cream soda" at a tavern and regain 50 HP. While this may seem easy, what this means is that even if you have 1 HP left, if you haven't gotten any mines, then you won't be able to heal since you have no gold. The rounds of Vindinium usually go on for around 1200 turns, and whoever has the most gold at the end is the winner.</p>
             </div>
+            <h2>What Does My Bot Do?</h2>
             <div class="red">
-                <h2>What Does My Bot Do?</h2>
-                <p></p>
+                <p>Now, this talk just begs the question of what <em>my</em> bot can do. Well, through trial and error, as well as several random ideas, my bot is capable of doing a variety of things for a variety of situations. One of the most popular things that my bot could do was drink from a tavern twice to regain all of its HP, or "doubleDrink."  Many people came to me asking how to do this, as my bot was one of the only ones which consistantly managed to do this. What one would do was to create a variable that would stay throughout all the turns, in this case doubleDrink, since the bot resets every turn, set it to false, and specify when they wanted the bot to drink at the nearest tavern. Then, with the first call for drinking at the tavern, one would set the doubleDrink variable to true, which would activate another action if a trigger included was one where doubleDrink was true. This trigger would make the bot drink from the nearest tavern again, and since the bot is right next to the tavern it just drank at, it drinks again. It is a good idea to set doubleDrink back to false, or else the bot will keep drinking forever. Some other things the bot can do is find the nearest mine and take it, figure out to NOT go to the tavern if it has less than 2 gold, and attack other players depending on how many mines these other players own. I'll provide the full code for my bot in a link below.</p>
             </div>
+            <a href="VindiniumBot.txt">Go here for the code!</a>
         </div>
         <p>Created: Monday June 8, 2015</p>
         <p>Last Updated: Wednesday June 10, 2015, 1:52 pm</p>
