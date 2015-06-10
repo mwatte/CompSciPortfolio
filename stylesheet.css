@@ -1,0 +1,67 @@
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; /* Set margin and padding for cross browser consistency. */
+	list-style-type: none; /* Needed to eliminate list item marker */ 
+	text-align: center; /* Centers navigation bar */ 
+	} 
+ 
+#navbar ul li {  
+	display: inline; /* Needed to create horizontal effect */ 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; /* Gives the link space inside it's individual block. */ 
+	color: #8071B4; 
+	background-color: #242420; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: white; 
+	background-color: #353535; /* Both of these values create the "Rollover effect*/
+	} 
+
+.example {
+  font-family: Verdana; 
+  font-size: 0.9em; 
+  background-color: white; 
+  border-width: 1px; 
+  border-color: black;   
+  border-style: solid;
+}
+
+span3 {
+  color: #AF2B45;
+}
+
+span2 {
+  color: firebrick;
+}
+
+span1 {
+  color: blue;
+}
+
+span {
+  color: #006600;
+}
+
+body > ul > li {
+  margin-top: 1em;                            /*1em specifies the margin-top is the size of 1 letter m*/
+}
+body {
+  font-family: sans-serif;
+  line-height: 130%;                          /*When you add a bunch of style in the head, it makes everything follow that style.*/
+                                              /*If you add style over a particular thing, then that style overrides this one*/
+  background-color: #242420;
+  text-align: center;
+}                                             /* this is how you comment in CSS */
+h1, h2, h3, h4, h5, h6 {
+  color: #80B905
+}
+p:nth-child(3) {
+  color: #AF2B45;
+}
+p {
+  color: #DDDDCA;
+}

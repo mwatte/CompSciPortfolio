@@ -25,7 +25,7 @@ function doMath() {
         answer = parseInt(num1) * parseInt(num2);
         display.innerHTML = answer;
     } 
-    else if (document.getElementById("DropdownMenu1").value == "÷") {
+    else if (document.getElementById("DropdownMenu1").value == "/") {
         num1 = parseInt(input1.value);
         num2 = parseInt(input2.value);
         answer = parseInt(num1) / parseInt(num2);
