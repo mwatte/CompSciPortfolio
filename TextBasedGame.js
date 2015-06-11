@@ -28,7 +28,7 @@ function runGame() {
                 break;
           		//
                 case "RUN AWAY AGAIN":
-                	display.insertAdjacentHTML('beforeend', "<br>" + "You take a step back, and then another, and take off running again, slipping and stumbling, with your feet phasing through the floor at times. Eventually, you have run so much that you cant't see anymore for exhaustion, and you run off the edge of the civillage to fall to your death down below. //YOU DIED. I hope you enjoyed our game, and that you'll play it again sometime. To play again, refresh the webpage. Have a nice day!" + "<br>");
+                	display.insertAdjacentHTML('beforeend', "<br>" + "You take a step back, and then another, and take off running again, slipping and stumbling, with your feet phasing through the floor at times. Eventually, you have run so much that you cant't see anymore for exhaustion, and you run off the edge of the village to fall to your death down below. //YOU DIED. I hope you enjoyed our game, and that you'll play it again sometime. To play again, refresh the webpage. Have a nice day!" + "<br>");
         			break;
         		//
                 case "TOUCH THE BRANCH":
